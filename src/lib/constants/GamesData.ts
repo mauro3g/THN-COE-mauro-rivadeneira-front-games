@@ -1,9 +1,9 @@
 import { IGame } from "../../types/Games";
 
-export const GAMES: IGame[] = [
+export const GAMES = [
     {
         image: `https://store-images.s-microsoft.com/image/apps.51373.13561500935514596.eddcbba6-93d0-42cc-93d4-0f33eaa8a4e8.28035953-3b70-48c2-b99c-991043ac8f21`,
-        title: `GRIG Legends`,
+        title: `GRID Legends`,
         description: `Racing & flying`
     },
     {

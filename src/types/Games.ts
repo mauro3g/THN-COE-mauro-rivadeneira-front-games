@@ -1,5 +1,9 @@
 export interface IGame {
-    image: string,
     title: string,
-    description: string
+    description: string,
+    releaseDate: Date,
+    developer: string,
+    platform: string,
+    genre: string,
+    image: string
 }
