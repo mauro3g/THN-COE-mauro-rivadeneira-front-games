@@ -406,8 +406,8 @@ footer {
   height: 90vh;
 }
 
-.form{
-
+.form button{
+  height: 50px;
 }
 
 .form input{

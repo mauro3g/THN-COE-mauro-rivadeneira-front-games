@@ -1,7 +1,7 @@
 import React from 'react'
 import useValues from '../hooks/value/useValues'
 import { IGame } from '../types/Games';
-import { postGames, putGames } from '../lib/utils/rest/gamesRepository';
+import { postGames } from '../lib/utils/rest/gamesRepository';
 
 const initialGameForm: IGame = {
     title: "",
@@ -39,7 +39,7 @@ const Management = () => {
                 <div>
                     <form className='flex flex-col' onSubmit={(e) => { e.preventDefault(); handleSubmit() }}>
                         <h1>Crear Juego</h1>
-                        <label htmlFor="name">Titulo: </label>
+                        <label htmlFor="title">Titulo:</label>
                         <input
                             id="title"
                             type="text"
@@ -50,7 +50,7 @@ const Management = () => {
                             required
                         />
                         <br />
-                        <label htmlFor="name">Descripcion: </label>
+                        <label htmlFor="description">Descripcion:</label>
                         <input
                             id="description"
                             type="text"
@@ -61,7 +61,7 @@ const Management = () => {
                             required
                         />
                         <br />
-                        <label htmlFor="name">Fecha de lanzamiento: </label>
+                        <label htmlFor="releaseDate">Fecha de lanzamiento:</label>
                         <input
                             id="releaseDate"
                             type="date"
@@ -73,7 +73,7 @@ const Management = () => {
                             required
                         />
                         <br />
-                        <label htmlFor="name">Desarrollador: </label>
+                        <label htmlFor="developer">Desarrollador:</label>
                         <input
                             id="developer"
                             type="text"
@@ -84,7 +84,7 @@ const Management = () => {
                             required
                         />
                         <br />
-                        <label htmlFor="name">Plataforma: </label>
+                        <label htmlFor="platform">Plataforma:</label>
                         <input
                             id="platform"
                             type="text"
@@ -95,7 +95,7 @@ const Management = () => {
                             required
                         />
                         <br />
-                        <label htmlFor="name">Genero: </label>
+                        <label htmlFor="genre">Genero:</label>
                         <input
                             id="genre"
                             type="text"
@@ -106,7 +106,7 @@ const Management = () => {
                             required
                         />
                         <br />
-                        <label htmlFor="name">Imagen Url: </label>
+                        <label htmlFor="image">Imagen Url:</label>
                         <input
                             id="image"
                             type="text"
