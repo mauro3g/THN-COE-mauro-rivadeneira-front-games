@@ -1,3 +1,18 @@
+# Screens
+
+Home
+
+![image](https://user-images.githubusercontent.com/32852669/191993406-ade3198c-9def-43f1-983a-6c1ac8dd2d9a.png)
+
+Games Info
+
+![image](https://user-images.githubusercontent.com/32852669/191993507-87e1d1c7-e305-4bce-9be1-93e8da088257.png)
+
+Manage Games
+
+![image](https://user-images.githubusercontent.com/32852669/191993582-890aa01f-bdd7-4165-b7aa-3e70447f1134.png)
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
