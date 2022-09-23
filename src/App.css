@@ -406,20 +406,24 @@ footer {
   height: 90vh;
 }
 
-.about input{
+.form{
+
+}
+
+.form input{
   margin-top: 20px;
   width: 500px;
   height: 30px;
   font-size: large;
 }
 
-.about textarea{
+.form textarea{
   margin-top: 20px;
   width: 500px;
   height: 200px;
   font-size: large;
 }
 
-.about button{
+.about form button{
   height: 50px;
 }

@@ -17,7 +17,7 @@ const About = () => {
 
     return (
         <React.Fragment>
-            <div className='about flex justify-center items-center'>
+            <div className='about form flex justify-center items-center'>
                 <div>
                     <form className='flex flex-col' onSubmit={(e) => { e.preventDefault(); handleSubmit() }}>
                         <h1>Contact Us</h1>
