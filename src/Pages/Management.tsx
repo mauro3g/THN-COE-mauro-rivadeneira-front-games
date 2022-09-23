@@ -1,6 +1,7 @@
 import React from 'react'
 import useValues from '../hooks/value/useValues'
 import { IGame } from '../types/Games';
+import { postGames, putGames } from '../lib/utils/rest/gamesRepository';
 
 const initialGameForm: IGame = {
     title: "",
@@ -12,18 +13,25 @@ const initialGameForm: IGame = {
     image: ""
 }
 
-const handleSubmit = () => {
-
-}
-
 const Management = () => {
 
     const { values: gameFormValues, updateValue: handleChange, updateValues } = useValues(initialGameForm)
 
     React.useEffect(() => {
-      console.log(gameFormValues)
+        console.log(gameFormValues)
     }, [gameFormValues])
-    
+
+    const formatDate = (date: Date) => {
+        return date.toLocaleDateString('en-GB').split('/').reverse().join('-');
+    }
+
+    const handleSubmit = async () => {
+        const created = await postGames(gameFormValues)
+        if (created) {
+            updateValues(initialGameForm)
+            alert("Juego creado")
+        }
+    }
 
     return (
         <React.Fragment>
@@ -58,7 +66,7 @@ const Management = () => {
                             id="releaseDate"
                             type="date"
                             aria-label='releaseDate'
-                            value={gameFormValues['releaseDate']}
+                            value={formatDate(gameFormValues['releaseDate'])}
                             min="2000-01-01" max="2022-12-31"
                             onChange={(e) => handleChange('releaseDate', new Date(e.target.value + "Z"))}
                             autoFocus
@@ -110,6 +118,7 @@ const Management = () => {
                         />
                         <br />
                         <button>Enviar</button>
+                        <br />
                     </form>
                 </div>
             </div>
