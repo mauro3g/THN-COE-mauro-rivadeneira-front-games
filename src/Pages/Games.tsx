@@ -1,9 +1,21 @@
 import React from 'react'
 import GameCard from '../Atoms/GameCard/GameCard'
 import { GAMES } from '../lib/constants/GamesData'
-import Nav from '../Molecules/Nav/Nav'
+import { getGames } from '../lib/utils/rest/gamesRepository'
+import { IGame } from '../types/Games'
 
 const Games = () => {
+
+    const [games, setGames] = React.useState<IGame[]>([])
+
+    React.useEffect(() => {
+        initialValues()
+    }, [])
+
+    const initialValues = async () => {
+        const catalog: IGame[] = await getGames()
+        setGames(catalog)
+    }
     return (
         <React.Fragment>
             <div className='game-section'>
@@ -11,12 +23,12 @@ const Games = () => {
                     Discover your next favorite games
                 </h1>
                 <div className='game-section__catalog'>
-                    {GAMES.map((game) => {
+                    {games.map((game) => {
                         return (
                             <GameCard
                                 image={game.image}
                                 title={game.title}
-                                description={game.description}
+                                description={""}
                                 imageStyles={{ width: '170px', height: '250px' }}
                             />
                         )
